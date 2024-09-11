@@ -19,3 +19,18 @@ function removeDuplicates(numbers)
     }
     return newArr
 }
+
+//תרגיל 3
+function capitalizeFirstLetter(text)
+{
+    const newText = text.split(" ")
+    for (let i = 0; i < newText.length; i++) {
+        let w = newText[i];
+        if (w[w.length - 1] != ".") 
+        { 
+            newText[i] = w[0].toUpperCase() + w.slice(1); 
+        }
+    }
+    return newText.join(" "); 
+}
+
