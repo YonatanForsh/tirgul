@@ -34,3 +34,46 @@ function capitalizeFirstLetter(text)
     return newText.join(" "); 
 }
 
+//תרגיל 4
+const tasks = [
+    {
+        id: "1",
+        task: "todo 1"
+    },
+    {
+        id: "2",
+        task: "todo 2"
+    },
+    {
+        id: "3",
+        task: "todo 3"
+    }
+]
+
+function loadTasks()
+{
+    const data = localStorage.getItem("missions") || "[]"
+    return JSON.parse(data)
+}
+
+function saveTasks(arr)
+{
+    localStorage.setItem("missions", JSON.stringify(arr))
+}
+
+function addTask(task)
+{
+    let dataArr = loadTasks()
+    dataArr.push(task)
+    saveTasks(dataArr)
+}
+
+function removeTask(id)
+{
+    let dataArr = loadTasks();
+    dataArr = dataArr.filter(task => task.id != id)
+    saveTasks(dataArr)
+}
+
+
+
